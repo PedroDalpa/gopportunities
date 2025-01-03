@@ -1,11 +1,12 @@
 package router
 
 import (
-	handler "github.com/PedroDalpa/gopportunities/handler/opening"
+	"github.com/PedroDalpa/gopportunities/handler"
 	"github.com/gin-gonic/gin"
 )
 
 func initializeRoutes(r *gin.Engine) {
+	handler.InitializeHandler()
 	v1 := r.Group("/api/v1")
 	{
 		v1.GET("/opening", handler.ShowOpeningHandler)
